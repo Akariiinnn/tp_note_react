@@ -1,7 +1,16 @@
 import "../Page.css"
 import {Link} from "react-router-dom";
+import {useState} from "react";
 
 const Header = () => {
+
+    const [message, setMessage] = useState('')
+
+    const handleChange = event => {
+        setMessage(event.target.value)
+
+        console.log("value is:", event.target.value)
+    }
 
     return (
         <>
@@ -9,19 +18,40 @@ const Header = () => {
                 <nav className={"navbar"}>
                     <Link to={"/"}><h1>Les cocktails de génie</h1></Link>
                     <ul>
-                        <li><Link to={"/nos_cocktails"}>Nos Cocktails</Link></li>
-                        <li><Link to={"/ingredients"}>Ingrédients</Link></li>
-                        <li><Link to={"/categories"}>Catégories</Link></li>
-                        <li><Link to={"/verres"}>Verres</Link></li>
+                        <Link to={"/nos_cocktails"}>
+                            <div className={"link-box"}>
+                                <li>Nos Cocktails</li>
+                            </div>
+                        </Link>
+                        < Link to={"/ingredients"}>
+                        <div className={"link-box"}>
+                            <li>Ingrédients</li>
+                        </div>
+                        </Link>
+
+                        <Link to={"/categories"}>
+                        <div className={"link-box"}>
+                            <li>Catégories</li>
+                        </div>
+                        </Link>
+                        <Link to={"/glasses"}>
+                        <div className={"link-box"}>
+                            <li>Verres</li>
+                        </div>
+                        </Link>
                     </ul>
                     <form>
-                        <input type='text' placeholder='Rechercher une recette' />
-                        <button type='submit'>Rechercher</button>
+                        <input onChange={handleChange} value={message} type='text'
+                               placeholder='Rechercher un cocktail'/>
+                        <Link to={`/search/${message}`}>
+                            <button>Rechercher</button>
+                        </Link>
                     </form>
                 </nav>
+                <div className={"header-space"}></div>
             </header>
         </>
-)
+    )
 }
 
 export default Header

@@ -1,8 +1,16 @@
 body {
+    background-color: #553D67;
+}
+
+body * {
+    text-decoration: none;
+}
+
+.container {
     background-color: #242582;
     display: flex;
     flex-direction: column;
-    margin-left: 0;
+    margin: 1%;
     font-family: 'Montserrat', 'sans-serif';
     color: whitesmoke;
 }
@@ -10,29 +18,41 @@ body {
 footer {
     background-color: lightgray;
     color: white;
-    height: 50px;
-    width: 100%;
+    height: auto;
     text-align: center;
     margin-top: auto;
     margin-bottom: 0;
-    position: absolute;
+}
+
+footer p {
+    color: #99738E;
 }
 
 .header {
     background-color: #242582;
     color: white;
-    display: flex;
     justify-content: center;
-    height: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-space {
+    height: 1px;
+    width: 85%;
+    margin: 1%;
+    background-color: #99738E;
 }
 
 .navbar {
     margin-top: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: white;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 .navbar h1 {
@@ -47,13 +67,34 @@ footer {
 
 .navbar li {
     list-style: none;
-    margin: 0 10px;
+}
+
+.link-box {
+    width: 160px;
+    height: 30px;
+    margin: auto 2px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.link-box:hover {
+    background-color: #f64c72;
+    border-radius: 2em;
+    color: white;
+}
+
+.link-box li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .navbar ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar form input {
@@ -106,6 +147,15 @@ footer {
     margin-left: 2%;
 }
 
+.all-glasses .highlighted:hover {
+    box-shadow: 0 0 11px rgba(255,50,80, 1);
+    transform: scale(1.04)
+}
+
+.all-glasses .highlighted {
+    width: 400px;
+}
+
 .highlighted:hover {
     box-shadow: 0 0 11px rgba(255,50,80, 1);
     transform: scale(1.05);
@@ -120,6 +170,23 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.lastCocktails .highlighted {
+    width: 100%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lastCocktails .highlighted img {
+    width: 85%;
+    margin-top: 10%;
+}
+
+.lastCocktails .highlighted p {
+    font-size: inherit;
 }
 
 .lastCocktails-section {
@@ -166,7 +233,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .all-cocktails .highlighted {
@@ -178,10 +245,84 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .all-ingredients .highlighted {
-    width: 100px;
-    margin: 2%;
+    width: 150px;
+    text-align: center;
+}
+
+.all-ingredients a {
+    width: 150px;
+    margin: 3%;
+}
+
+.nos-cocktails {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.nos-cocktails .a {
+    width: 200px;
+    background-color: black;
+}
+
+.all-glasses a .highlighted h2 {
+    text-decoration: none !important;
+}
+
+.category .highlighted h2 {
+    text-decoration: none !important;
+}
+
+.cocktail-details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.cocktail-details-header {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 2%;
+}
+
+.cocktail-details-header img {
+    width: 100%;
+    border-radius: 2em;
+}
+
+.cocktail-details-header ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+.list-box{
+
+    width: max-content;
+    padding: 2%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+    background-color: #99738E;
+}
+
+.cocktail-details-body {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 2%;
+}
+
+.cocktail-details-body ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    list-style: circle;
 }

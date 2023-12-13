@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import {MainContext} from "../context/MainContext";
+import {Link} from "react-router-dom";
 
 const AllIngredients = () => {
 
@@ -11,12 +12,16 @@ const AllIngredients = () => {
             <section className={"all-ingredients"}>
                 {ingredients ? (
                     ingredients.map((ingredient, index) => (
-                        <section className={"highlighted"}>
-                            <img
-                                src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Small.png`}
-                                alt={ingredient.strIngredient1}/>
-                            <h2 className="card-title">{ingredient.strIngredient1}</h2>
-                        </section>
+                        <>
+                            <Link to={`/ingredients/${ingredient.strIngredient1.replace("\/", " ")}`}>
+                                <section className={"highlighted"}>
+                                    <img
+                                        src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Medium.png`}
+                                        alt={ingredient.strIngredient1}/>
+                                    <h2 className="card-title">{ingredient.strIngredient1}</h2>
+                                </section>
+                            </Link>
+                        </>
                     ))
                 ) : (
                     <section className={"highlighted"}>

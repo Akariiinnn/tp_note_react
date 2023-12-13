@@ -1,6 +1,7 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {MainContext} from "../context/MainContext";
 import CocktailCard from "./CocktailCard";
+import {Link} from "react-router-dom";
 
 const AllCategories = () => {
 
@@ -9,12 +10,14 @@ const categories = useContext(MainContext);
 return (
     <section className={"all-categories"}>
         {categories ? (
-            categories.map((category, index) => (
+            categories.map((category) => (
+                <Link to={`/categories/${category.strCategory.replace(" \/ ", " ")}`}>
                 <section className={"category"}>
                     <section className={"highlighted"}>
                         <h2 className="card-title">{category.strCategory}</h2>
                     </section>
                 </section>
+                </Link>
             ))
         ) : (
             <section className={"all-cocktails"}>

@@ -3,7 +3,7 @@ import '../Page.css'
 const Footer = () => {
     return (
         <footer>
-            <p>Footer</p>
+            <p>Powered by TheCocktailDB</p>
         </footer>
     )
 }
