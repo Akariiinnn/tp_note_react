@@ -43,12 +43,8 @@ const Header = () => {
                         </Link>
                     </ul>
                     <form>
-                        <label>
-                            <Link to={`/search/${message}`}>
-                            <input onChange={handleChange} value={message} type='text'
-                                   placeholder='Lookup cocktails'/>
-                            </Link>
-                        </label>
+                        <input onChange={handleChange} value={message} type='text'
+                               placeholder='Lookup cocktails'/>
                         <Link to={`/search/${message}`}>
                             <button disabled={isInputEmpty()}>Search</button>
                         </Link>
