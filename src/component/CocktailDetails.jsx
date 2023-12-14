@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const CocktailDetails = ({drink}) => {
 
     return (
@@ -6,9 +8,11 @@ const CocktailDetails = ({drink}) => {
                 <h2 className="card-title">{drink.strDrink}</h2>
                 <img src={drink.strDrinkThumb} alt={drink.strDrink}/>
                 <ul className={"tags"}>
-                    <div className={"list-box"}>
-                        <li>{drink.strCategory}</li>
-                    </div>
+                    <Link to={`/categories/${drink.strCategory}`} style={{display: "contents"}}>
+                        <div className={"list-box"}>
+                            <li>{drink.strCategory}</li>
+                        </div>
+                    </Link>
                     <div className={"list-box"}>
                         <li>{drink.strAlcoholic}</li>
                     </div>
@@ -20,11 +24,13 @@ const CocktailDetails = ({drink}) => {
             </div>
             <div className="cocktail-details-body">
                 <h2>Ingredients</h2>
-                <ul>
+                <ul className={"ingredients-list"}>
                     {Object.keys(drink).map((key) => {
                         if (key.includes("strIngredient") && drink[key]) {
                             return (
-                                <li key={key}>{drink[key]} {drink[`strMeasure${key.split("strIngredient").pop()}`]}</li>
+                                <Link to={`/ingredients/${drink[key]}`}>
+                                    <li key={key}>{drink[key]} {drink[`strMeasure${key.split("strIngredient").pop()}`]}</li>
+                                </Link>
                             )
                         }
                         return null;
