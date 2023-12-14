@@ -8,8 +8,6 @@ const RandomCategory = () => {
 
     const randomCategory = context.categories[Math.floor(Math.random() * context.categories.length)]
 
-    console.log(randomCategory)
-
     return (
 
         <section className={"randomCategory-section"}>

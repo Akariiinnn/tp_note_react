@@ -12,7 +12,6 @@ const Search = () => {
     useEffect(() => {
         (async () => {
             const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`
-            console.log(url)
             const queryData = await fetch(url)
             const queryDataResponse = await queryData.json()
             setSearchedDrinks(queryDataResponse.drinks)

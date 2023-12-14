@@ -13,7 +13,6 @@ const Glass = () => {
     useEffect(() => {
         (async () => {
             const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass.replace("_", "\/")}`
-            console.log(url)
             const cocktailsByGlassData = await fetch(url)
             const cocktailsByGlassDataResponse = await cocktailsByGlassData.json()
             setCocktails(cocktailsByGlassDataResponse.drinks)
