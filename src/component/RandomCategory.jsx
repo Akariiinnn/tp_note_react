@@ -18,9 +18,11 @@ const RandomCategory = () => {
                 <>
                     <section className={"randomCategory"}>
                             <section className={"category"}>
+                                <Link to={`/categories/${randomCategory.strCategory.replace(" \/ ", "_")}`}>
                                 <section className={"highlighted"}>
                                     <h2 className="card-title">{randomCategory.strCategory}</h2>
                                 </section>
+                                </Link>
                             </section>
                     </section>
                 </>
