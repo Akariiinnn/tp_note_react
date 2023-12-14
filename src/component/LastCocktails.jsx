@@ -9,11 +9,9 @@ const LastCocktails = () => {
 
     const lastCocktails = context.cocktails.slice(-4)
 
-    console.log(lastCocktails)
-
     return (
         <section className={"lastCocktails-section"}>
-            <Link to={"/nos_cocktails"}><h2>Nos derniers cocktails</h2></Link>
+            <Link to={"/our_cocktails"}><h2>Our last cocktails</h2></Link>
             <section className={"lastCocktails"}>
                 {lastCocktails.map((cocktail, index) => (
                     <section className={"home_page_cocktail"}>

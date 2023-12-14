@@ -6,18 +6,29 @@ const AllCocktails = () => {
 
     const cocktails = useContext(MainContext);
 
+    const loadingArray = Array(12).fill({
+        strDrink: "...",
+        strDrinkThumb: "/images/Pulse-1s-200px.gif",
+        strInstructions: "..."
+    })
+
     return (
-        <section className={"all-cocktails"}>
-            {cocktails ? (
-                cocktails.map((cocktail, index) => (
+        <>
+            <h2 style={{marginLeft: "2%"}}>All of our cocktails</h2>
+            <section className={"all-cocktails"}>
+                {cocktails ? (
+                    cocktails.map((cocktail, index) => (
                         <CocktailCard cocktail={cocktail}/>
-                ))
-            ) : (
-                <section className={"all-cocktails"}>
-                <CocktailCard cocktail={{strDrink: "...", strDrinkThumb: "https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif", strInstructions: "..."}}/>
-                </section>
-            )}
-        </section>
+                    ))
+                ) : (
+                    <>
+                        {loadingArray.map((cocktail) => (
+                            <CocktailCard cocktail={cocktail}/>
+                        ))}
+                    </>
+                )}
+            </section>
+        </>
     )
 }
 

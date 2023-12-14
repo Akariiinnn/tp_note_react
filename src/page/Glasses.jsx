@@ -1,8 +1,7 @@
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import {useEffect, useState} from "react";
 import {MainContext} from "../context/MainContext";
 import AllGlasses from "../component/AllGlasses";
+import Layout from "../component/Layout";
 
 const Glasses = () => {
 
@@ -20,15 +19,15 @@ const Glasses = () => {
         <>
             {glasses ? (
                 <MainContext.Provider value={glasses}>
-                    <Header/>
+                    <Layout>
                     <AllGlasses />
-                    <Footer/>
+                    </Layout>
                 </MainContext.Provider>
             ) : (
                 <>
-                    <Header />
-                    <img className="spinner" src={"https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
-                    <Footer />
+                    <Layout>
+                    <img className="spinner" src={"/images/Pulse-1s-200px.gif"} alt={"loading"}/>
+                    </Layout>
                 </>
             )}
         </>

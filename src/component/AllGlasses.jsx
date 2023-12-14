@@ -8,14 +8,12 @@ const AllGlasses = () => {
 
     return (
         <>
-            <h2 style={{marginLeft: "2%"}}>Tout les verres</h2>
+            <h2 style={{marginLeft: "2%"}}>Every glasses</h2>
             <section className={"all-glasses"}>
                 {glasses ? (
                     glasses.map((glass, index) => (
-                        <Link to={`/glasses/${glass.strGlass.replace("\/", "_")}`}>
-                        <section className="highlighted">
+                        <Link to={`/glasses/${glass.strGlass.replace("\/", "_")}`} className={"highlighted"}>
                             <h2>{glass.strGlass}</h2>
-                        </section>
                         </Link>
                     ))
                 ) : (

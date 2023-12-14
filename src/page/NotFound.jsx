@@ -1,8 +1,10 @@
+import Layout from "../component/Layout";
+
 const NotFound = () => {
     return (
-        <div>
-            <h1>404</h1>
-        </div>
+        <Layout>
+            <p style={{textAlign: "center", marginTop:"15%", marginBottom:"85%"}}>Page non trouvée</p>
+        </Layout>
     )
 }
 

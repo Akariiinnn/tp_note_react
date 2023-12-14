@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import {MainContext} from "../context/MainContext";
 import SearchedResult from "../component/SearchedResult";
+import Layout from "../component/Layout";
 
 const Search = () => {
 
@@ -22,19 +21,11 @@ const Search = () => {
 
     return (
         <>
-            {searchedDrinks ? (
-                <MainContext.Provider value={searchedDrinks}>
-                    <Header />
-                    <SearchedResult />
-                    <Footer />
-                </MainContext.Provider>
-            ) : (
-                <>
-                    <Header />
-                    <SearchedResult />
-                    <Footer />
-                </>
-            )}
+            <MainContext.Provider value={searchedDrinks}>
+                <Layout>
+                    <SearchedResult query={query}/>
+                </Layout>
+            </MainContext.Provider>
         </>
     )
 }

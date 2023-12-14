@@ -8,8 +8,6 @@ const Header = () => {
 
     const handleChange = event => {
         setMessage(event.target.value)
-
-        console.log("value is:", event.target.value)
     }
 
     const isInputEmpty = () => {
@@ -20,35 +18,39 @@ const Header = () => {
         <>
             <header className='header'>
                 <nav className={"navbar"}>
-                    <Link to={"/"}><h1>Les cocktails de génie</h1></Link>
+                    <Link to={"/"}><h1>Cocktails from heaven</h1></Link>
                     <ul>
-                        <Link to={"/nos_cocktails"}>
+                        <Link to={"/our_cocktails"}>
                             <div className={"link-box"}>
-                                <li>Nos Cocktails</li>
+                                <li>Our Cocktails</li>
                             </div>
                         </Link>
                         < Link to={"/ingredients"}>
-                        <div className={"link-box"}>
-                            <li>Ingrédients</li>
-                        </div>
+                            <div className={"link-box"}>
+                                <li>Ingredients</li>
+                            </div>
                         </Link>
 
                         <Link to={"/categories"}>
-                        <div className={"link-box"}>
-                            <li>Catégories</li>
-                        </div>
+                            <div className={"link-box"}>
+                                <li>Categories</li>
+                            </div>
                         </Link>
                         <Link to={"/glasses"}>
-                        <div className={"link-box"}>
-                            <li>Verres</li>
-                        </div>
+                            <div className={"link-box"}>
+                                <li>Glasses</li>
+                            </div>
                         </Link>
                     </ul>
                     <form>
-                        <input onChange={handleChange} value={message} type='text'
-                               placeholder='Rechercher un cocktail'/>
+                        <label>
+                            <Link to={`/search/${message}`}>
+                            <input onChange={handleChange} value={message} type='text'
+                                   placeholder='Lookup cocktails'/>
+                            </Link>
+                        </label>
                         <Link to={`/search/${message}`}>
-                            <button disabled={isInputEmpty()}>Rechercher</button>
+                            <button disabled={isInputEmpty()}>Search</button>
                         </Link>
                     </form>
                 </nav>

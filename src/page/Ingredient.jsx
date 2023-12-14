@@ -1,9 +1,8 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {MainContext} from "../context/MainContext";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import ShowCocktails from "../component/AllCocktails.jsx"
+import Layout from "../component/Layout";
 
 const Ingredient = () => {
 
@@ -13,7 +12,7 @@ const Ingredient = () => {
 
     useEffect(() => {
         (async() => {
-            const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient.replace(" ", "\/" )}`
+            const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient.replace("_", "\/" )}`
             console.log(url)
             const cocktailsByCategoryData = await fetch(url)
             const cocktailsByCategoryDataResponse = await cocktailsByCategoryData.json()
@@ -25,15 +24,15 @@ const Ingredient = () => {
         <>
             {cocktails ? (
                 <MainContext.Provider value={cocktails}>
-                    <Header/>
+                    <Layout>
                     <ShowCocktails/>
-                    <Footer/>
+                    </Layout>
                 </MainContext.Provider>
             ) : (
                 <>
-                    <Header />
-                    <img className="spinner" src={"https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
-                    <Footer />
+                    <Layout>
+                    <img className="spinner" src={"/images/Pulse-1s-200px.gif"} alt={"loading"}/>
+                    </Layout>
                 </>
             )}
         </>

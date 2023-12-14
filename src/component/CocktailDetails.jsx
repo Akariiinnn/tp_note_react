@@ -16,7 +16,7 @@ const CocktailDetails = ({drink}) => {
                         <li>{drink.strGlass}</li>
                     </div>
                 </ul>
-                <p>Modifié le {drink.dateModified}</p>
+                <p>Modified: {drink.dateModified}</p>
             </div>
             <div className="cocktail-details-body">
                 <h2>Ingredients</h2>

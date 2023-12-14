@@ -1,12 +1,11 @@
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import {useEffect, useState} from "react";
 import {MainContext} from "../context/MainContext";
 import AllIngredients from "../component/AllIngredients";
+import Layout from "../component/Layout";
 
 const Ingredients = () => {
 
-    const [ingredients, setIngredients] = useState([]);
+    const [ingredients, setIngredients] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -17,21 +16,18 @@ const Ingredients = () => {
     }, [])
 
     return (
-        <>
+
+        <MainContext.Provider value={ingredients}>
             {ingredients ? (
-                <MainContext.Provider value={ingredients}>
-                    <Header/>
+                    <Layout>
                     <AllIngredients/>
-                    <Footer/>
-                </MainContext.Provider>
+                    </Layout>
             ) : (
-                <>
-                    <Header />
-                    <img className="spinner" src={"https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
-                    <Footer />
-                </>
+                <Layout>
+                    <AllIngredients/>
+                </Layout>
             )}
-        </>
+        </MainContext.Provider>
     )
 }
 

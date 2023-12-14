@@ -13,7 +13,7 @@ const RandomCategory = () => {
     return (
 
         <section className={"randomCategory-section"}>
-            <Link to={"/categories"}><h2>Categorie aléatoire</h2></Link>
+            <Link to={"/categories"}><h2>Random category</h2></Link>
             {randomCategory ? (
                 <>
                     <section className={"randomCategory"}>
@@ -27,7 +27,7 @@ const RandomCategory = () => {
                     </section>
                 </>
             ) : (
-                <p>Chargement...</p>
+                <p></p>
             )}
         </section>
     )

@@ -8,12 +8,12 @@ const AllIngredients = () => {
 
     return (
         <>
-            <h2 style={{marginLeft: "2%"}}>Tout les ingrédients</h2>
+            <h2 style={{marginLeft: "2%"}}>Every ingredients</h2>
             <section className={"all-ingredients"}>
                 {ingredients ? (
                     ingredients.map((ingredient, index) => (
                         <>
-                            <Link to={`/ingredients/${ingredient.strIngredient1.replace("\/", " ")}`}>
+                            <Link to={`/ingredients/${ingredient.strIngredient1.replace("\/", "_")}`}>
                                 <section className={"highlighted"}>
                                     <img
                                         src={`https://www.thecocktaildb.com/images/ingredients/${ingredient.strIngredient1}-Medium.png`}
@@ -24,10 +24,9 @@ const AllIngredients = () => {
                         </>
                     ))
                 ) : (
-                    <section className={"highlighted"}>
-                        <img src={"https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
-                        <h2 className="card-title">...</h2>
-                    </section>
+                    <img className="spinner" src={"https://media.tenor.comOn7kvXhzml4AAAAi/loading-gif.gif"}
+                         alt={"loading"}/>
+
                 )}
             </section>
         </>

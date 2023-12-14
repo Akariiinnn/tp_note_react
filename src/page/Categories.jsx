@@ -1,12 +1,11 @@
-import Header from "../component/Header";
-import Footer from "../component/Footer";
 import AllCategories  from "../component/AllCategories.jsx"
 import {useEffect, useState} from "react";
 import {MainContext} from "../context/MainContext";
+import Layout from "../component/Layout";
 
 const Categories = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -20,15 +19,15 @@ const Categories = () => {
         <>
             {categories ? (
                 <MainContext.Provider value={categories}>
-                    <Header/>
+                    <Layout>
                     <AllCategories/>
-                    <Footer/>
+                    </Layout>
                 </MainContext.Provider>
             ) : (
                 <>
-                    <Header />
-                    <img className="spinner" src={"https://media.tenor.com/On7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
-                    <Footer />
+                    <Layout>
+                    <img className="spinner" src={"https://media.tenor.comOn7kvXhzml4AAAAi/loading-gif.gif"} alt={"loading"}/>
+                    </Layout>
                 </>
             )}
         </>
