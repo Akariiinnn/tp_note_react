@@ -12,7 +12,7 @@ const AllGlasses = () => {
             <section className={"all-glasses"}>
                 {glasses ? (
                     glasses.map((glass, index) => (
-                        <Link to={`/glasses/${glass.strGlass.replace("\/", " ")}`}>
+                        <Link to={`/glasses/${glass.strGlass.replace("\/", "_")}`}>
                         <section className="highlighted">
                             <h2>{glass.strGlass}</h2>
                         </section>

@@ -1,5 +1,5 @@
 body {
-    background-color: #553D67;
+    background-color: #5CDB95;
 }
 
 body * {
@@ -7,7 +7,7 @@ body * {
 }
 
 .container {
-    background-color: #242582;
+    background-color: #5CDB95;
     display: flex;
     flex-direction: column;
     margin: 1%;
@@ -25,12 +25,11 @@ footer {
 }
 
 footer p {
-    color: #99738E;
+    color: #05386B;
 }
 
 .header {
-    background-color: #242582;
-    color: white;
+    background-color: #5CDB95;
     justify-content: center;
     height: auto;
     display: flex;
@@ -42,7 +41,7 @@ footer p {
     height: 1px;
     width: 85%;
     margin: 1%;
-    background-color: #99738E;
+    background-color: #05386B;
 }
 
 .navbar {
@@ -50,13 +49,13 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     padding: 0 20px;
     flex-wrap: wrap;
+    color: #05386B;
 }
 
 .navbar h1 {
-    color: #f64c72;
+    color: #05386B;
 }
 
 .navbar form {
@@ -72,14 +71,16 @@ footer p {
 .link-box {
     width: 160px;
     height: 30px;
-    margin: auto 2px;
+    margin: auto 10px;
     text-align: center;
     transition: all 0.3s ease-in-out;
+    border-radius: 2em;
+    color: #05386B;
+    background-color: #8EE4AF
 }
 
 .link-box:hover {
-    background-color: #f64c72;
-    border-radius: 2em;
+    background-color: #05386B;
     color: white;
 }
 
@@ -88,6 +89,7 @@ footer p {
     justify-content: center;
     align-items: center;
     height: 100%;
+    color: inherit;
 }
 
 .navbar ul {
@@ -95,6 +97,7 @@ footer p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 .navbar form input {
@@ -115,7 +118,7 @@ footer p {
 }
 
 .navbar button {
-    background-color: #f64c72;
+    background-color: #05386B;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -131,9 +134,9 @@ footer p {
 .highlighted {
     margin: 2%;
     border-radius: 2em;
-    box-shadow: 0 0 11px #f64c72;
+    box-shadow: 0 0 11px #05386B;
     transition: all 0.3s ease-in-out;
-    background-color: #f64c72;
+    background-color: #05386B;
     color: whitesmoke;
     padding: 2%;
 }
@@ -148,7 +151,7 @@ footer p {
 }
 
 .all-glasses .highlighted:hover {
-    box-shadow: 0 0 11px rgba(255,50,80, 1);
+    box-shadow: 0 0 11px rgba(0, 0, 80, 1);
     transform: scale(1.04)
 }
 
@@ -157,7 +160,7 @@ footer p {
 }
 
 .highlighted:hover {
-    box-shadow: 0 0 11px rgba(255,50,80, 1);
+    box-shadow: 0 0 11px rgba(0, 0, 80, 1);
     transform: scale(1.05);
 }
 
@@ -289,6 +292,7 @@ footer p {
     flex-direction: column;
     width: 25%;
     padding: 2%;
+    color: #05386B;
 }
 
 .cocktail-details-header img {
@@ -300,7 +304,8 @@ footer p {
     width: 100%;
     display: flex;
     list-style: none;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0;
 }
 .list-box{
 
@@ -309,8 +314,9 @@ footer p {
     height: 25px;
     display: flex;
     align-items: center;
-    margin-top: 2%;
     background-color: #99738E;
+    color: white;
+    margin: 1%;
 }
 
 .cocktail-details-body {
@@ -318,6 +324,7 @@ footer p {
     flex-direction: column;
     width: 75%;
     padding: 2%;
+    color: #05386B;
 }
 
 .cocktail-details-body ul {

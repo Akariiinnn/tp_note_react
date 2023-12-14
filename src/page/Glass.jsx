@@ -11,13 +11,19 @@ const Glass = () => {
 
     const [cocktails, setCocktails] = useState(null)
 
+    let hasUnderscore = false;
+
+    if(glass.indexOf("_") !== -1){
+        hasUnderscore = true;
+    }
+
     useEffect(() => {
         (async() => {
-            const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass.replace(" ", "\/" )}`
+            const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass.replace("_", "\/" )}`
             console.log(url)
-            const cocktailsByCategoryData = await fetch(url)
-            const cocktailsByCategoryDataResponse = await cocktailsByCategoryData.json()
-            setCocktails(cocktailsByCategoryDataResponse.drinks)
+            const cocktailsByGlassData = await fetch(url)
+            const cocktailsByGlassDataResponse = await cocktailsByGlassData.json()
+            setCocktails(cocktailsByGlassDataResponse.drinks)
         })()
     }, [glass]);
 

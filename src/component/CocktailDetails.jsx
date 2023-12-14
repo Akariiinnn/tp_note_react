@@ -15,14 +15,11 @@ const CocktailDetails = ({drink}) => {
                     <div className={"list-box"}>
                         <li>{drink.strGlass}</li>
                     </div>
-                    <div className={"list-box"}>
-                        <li>{drink.strIBA}</li>
-                    </div>
                 </ul>
                 <p>Modifié le {drink.dateModified}</p>
             </div>
             <div className="cocktail-details-body">
-                <h3>Ingredients</h3>
+                <h2>Ingredients</h2>
                 <ul>
                     {Object.keys(drink).map((key) => {
                         if (key.includes("strIngredient") && drink[key]) {
@@ -33,7 +30,7 @@ const CocktailDetails = ({drink}) => {
                         return null;
                     })}
                 </ul>
-                <h3>Instructions</h3>
+                <h2>Instructions</h2>
                 <p>{drink.strInstructions}</p>
             </div>
         </div>

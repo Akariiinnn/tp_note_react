@@ -9,6 +9,7 @@ import Category from "./page/Category";
 import Ingredient from "./page/Ingredient";
 import Glass from "./page/Glass";
 import Drink from "./page/Drink";
+import NotFound from "./page/NotFound";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path={"/ingredients/:ingredient"} element={<Ingredient />} />
               <Route path={"/glasses/:glass"} element={<Glass />} />
               <Route path={"/drinks/:id"} element={<Drink />} />
+              <Route path="*" element={<NotFound />} />
           </Routes>
       </BrowserRouter>
       </div>

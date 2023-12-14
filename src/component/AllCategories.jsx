@@ -11,7 +11,7 @@ return (
     <section className={"all-categories"}>
         {categories ? (
             categories.map((category) => (
-                <Link to={`/categories/${category.strCategory.replace(" \/ ", " ")}`}>
+                <Link to={`/categories/${category.strCategory.replace(" \/ ", "_")}`}>
                 <section className={"category"}>
                     <section className={"highlighted"}>
                         <h2 className="card-title">{category.strCategory}</h2>

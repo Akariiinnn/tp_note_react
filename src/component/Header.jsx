@@ -12,6 +12,10 @@ const Header = () => {
         console.log("value is:", event.target.value)
     }
 
+    const isInputEmpty = () => {
+        return message === ''
+    }
+
     return (
         <>
             <header className='header'>
@@ -44,7 +48,7 @@ const Header = () => {
                         <input onChange={handleChange} value={message} type='text'
                                placeholder='Rechercher un cocktail'/>
                         <Link to={`/search/${message}`}>
-                            <button>Rechercher</button>
+                            <button disabled={isInputEmpty()}>Rechercher</button>
                         </Link>
                     </form>
                 </nav>
