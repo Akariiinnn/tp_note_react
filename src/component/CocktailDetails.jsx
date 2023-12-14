@@ -8,7 +8,7 @@ const CocktailDetails = ({drink}) => {
                 <h2 className="card-title">{drink.strDrink}</h2>
                 <img src={drink.strDrinkThumb} alt={drink.strDrink}/>
                 <ul className={"tags"}>
-                    <Link to={`/categories/${drink.strCategory}`} style={{display: "contents"}}>
+                    <Link to={`/categories/${drink.strCategory.replace(" \/ ", "_")}`} style={{display: "contents"}}>
                         <div className={"list-box"}>
                             <li>{drink.strCategory}</li>
                         </div>

@@ -29,7 +29,7 @@ const Drink = () => {
             ) : (
                 <>
                     <Layout>
-                        <CocktailDetails drink={{strDrink: "...", strDrinkThumb: "/images/Pulse-1s-200px.gif", strInstructions: "..."}}/>
+                        <CocktailDetails drink={{strDrink: "...", strDrinkThumb: "/images/Pulse-1s-200px.gif", strInstructions: "...", strCategory: "..."}}/>
                     </Layout>
                 </>
             )}
